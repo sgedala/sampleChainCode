@@ -113,18 +113,19 @@ if len(args) != 12 {
 // to get the deatils of a user against ffid (for internal testing, irrespective of org)
 func (t *FFP) getUser(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 
+fmt.Println("Hello, World!")
 	if len(args) != 1 {
 		return nil, errors.New("Incorrect number of arguments. Expecting ffId to query")
 	}
 
 	ffId := args[0]
-	
+	fmt.Println("Hello, World!!")
 
 	// Get the row pertaining to this ffId
 	var columns []shim.Column
 	col1 := shim.Column{Value: &shim.Column_String_{String_: ffId}}
 	columns = append(columns, col1)
-
+fmt.Println("Hello, World!!!")
 	row, err := stub.GetRow("UserDetails", columns)
 	fmt.Println("Hello, World!")
 	fmt.Println(err)

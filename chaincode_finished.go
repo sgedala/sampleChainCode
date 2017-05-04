@@ -60,10 +60,8 @@ func (t *FFP) Init(stub shim.ChaincodeStubInterface, function string, args []str
 	}
 		
 	// setting up the users role
-	stub.PutState("user_type1_1", []byte("etihad"))
-	stub.PutState("user_type1_2", []byte("hertz"))
-	stub.PutState("user_type1_3", []byte("marriot"))
-	stub.PutState("user_type1_4", []byte("amazon"))	
+	stub.PutState("user_type1_1", []byte("admin"))
+	
 	
 	return nil, nil
 }
@@ -130,13 +128,13 @@ fmt.Println("Hello, World!!!")
 	fmt.Println("Hello, World!")
 	fmt.Println(err)
 	if err != nil {
-		jsonResp := "{\"Error\":\"Failed to get the data for the application " + ffId + "\"}"
+		jsonResp := "{\"Error\":\"Failed subbu is changins the msg " + ffId + "\"}"
 		return nil, errors.New(jsonResp)
 	}
 
 	// GetRows returns empty message if key does not exist
 	if len(row.Columns) == 0 {
-		jsonResp := "{\"Error\":\"Failed to get the data for the application " + ffId + "\"}"
+		jsonResp := "{\"Error\":\"Failed to get the data for the application232333333333333333333 " + ffId + "\"}"
 		return nil, errors.New(jsonResp)
 	}
 

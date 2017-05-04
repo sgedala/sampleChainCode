@@ -126,6 +126,8 @@ func (t *FFP) getUser(stub shim.ChaincodeStubInterface, args []string) ([]byte, 
 	columns = append(columns, col1)
 
 	row, err := stub.GetRow("UserDetails", columns)
+	fmt.Println("Hello, World!")
+	fmt.Println(err)
 	if err != nil {
 		jsonResp := "{\"Error\":\"Failed to get the data for the application " + ffId + "\"}"
 		return nil, errors.New(jsonResp)
